@@ -26,6 +26,9 @@
 Node<int>* sortTwoLists(Node<int>* first, Node<int>* second)
 {
     // Write your code here.
+    /*
+    // Iterative Approach
+    
     if(!first) return second;
     if(!second) return first;
     
@@ -59,4 +62,18 @@ Node<int>* sortTwoLists(Node<int>* first, Node<int>* second)
         second = second -> next;
     }
     return head;
+    */
+    
+    // Recursive Approach
+    if(!first) return second;
+    if(!second) return first;
+    
+    if(first -> data < second -> data){
+        first -> next = sortTwoLists(first -> next, second);
+        return first;
+    }
+    else{
+        second -> next = sortTwoLists(first, second -> next);
+        return second;
+    }
 }
