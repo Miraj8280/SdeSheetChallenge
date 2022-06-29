@@ -2,7 +2,6 @@
 
 int bellmonFord(int n, int m, int src, int dest, vector<vector<int>> &edges) {
     // Write your code here.
-    vector<int> visited(n + 1, 0);
     vector<int> dist(n + 1, INT_MAX);
     dist[src] = 0;
     
